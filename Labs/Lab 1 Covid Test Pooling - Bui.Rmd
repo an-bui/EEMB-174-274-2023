@@ -235,6 +235,7 @@ z = -10 + 3i
 a = log(abs(Re(z)), base = 10)
 
 ```
+
 #### Problem 4
 
 Take the pipe code and modify it to take the square root after the absolute value but before taking the log. Also use the natural log instead of base 10. You might have to use Google to figure our how to do this. (But half of programming is being great at looking things up.) You should get 1.151293 as your final answer.
@@ -288,9 +289,12 @@ We can run this function like so.
 ```{r run_function}
 calc_tests(3)  # Mean tests needed for when pools have three people each
 ```
+
 #### Problem 5
 
 Try changing the pool size in the chunk above to see how the mean number of tests change. Why do the numbers change each time we run it? Why is *calc_tests(1)* not exactly equal to 1?  
+
+**Numbers change with each run (different pool size):** The numbers change with each run when changing the pool size because there are different numbers of individuals in each pool, so the probability of getting at least one person in the pool testing positive changes, and therefore the number of tests needed to retest everyone also changes.  
 
 **Numbers change with each run (same pool size):**  The numbers change with each run because they are random draws from a distribution, so there will not be the same numbers pulled with each run.  
 
@@ -327,6 +331,7 @@ keffects <- keffects %>%
 ggplot(data = keffects, aes(x = k, y = ave_tests, group = poolsize)) +
   geom_boxplot()
 ```
+
 #### Problem 6
 
 Does the pooling strategy use less tests than the naive one-test-per-person strategy? If so, what is the best pool size *k* to use?  
